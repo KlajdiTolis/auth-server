@@ -13,4 +13,17 @@ const UserSchema = new mongoose.Schema({
 
 const User = mongoose.model("User", UserSchema);
 
-module.exports = User;
+const testCollection = new mongoose.Schema({
+  name: {
+    type: String,
+    required: true,
+  },
+  price: {
+    type: String,
+    required: true,
+  },
+});
+
+const TestColl = mongoose.model("testColl", testCollection);
+
+module.exports = { User, TestColl };
